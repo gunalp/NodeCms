@@ -1,2 +1,2 @@
 # nodeCms app
-> hello world!
+> Content Managment System with Node.js and sqlite !
