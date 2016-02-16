@@ -7,8 +7,9 @@ var expressInit = require("./libs/express");
 
 var app = express();
 
-expressInit(app);
+expressInit(app, function () {
+	app.listen(config.port, function () {
+		console.log("[express]", config.port);
 
-app.listen(config.port, function () {
-	console.log("[express]", config.port);
+	});
 });
