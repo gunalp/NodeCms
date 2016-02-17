@@ -8,6 +8,8 @@
     "cookie-parser": "~1.1.0",
     "express": "~4.13.4",
     "js-sha512": "^0.2.2",
-    "rand-token": "^0.2.1"
+    "rand-token": "^0.2.1",
+    "sequelize": "^3.19.2",
+    "sqlite3": "^3.1.1"
   }
 }

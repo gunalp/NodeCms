@@ -3,6 +3,7 @@
  */
 var express = require('express');
 var config = require("./libs/config");
+var db = require("./libs/db");
 var expressInit = require("./libs/express");
 
 var app = express();

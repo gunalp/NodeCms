@@ -3,13 +3,8 @@
  */
 module.exports = {
 	index: function (req, res) {
-		var cookieToken = req.cookies['token'];
-
-	},
-	default: function (req, res) {
-		res.status(404).json({
-			err: true,
-			msg: "Not found."
-		});
+res.json({
+	'version':"0.0.61"
+});
 	}
 };
