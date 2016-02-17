@@ -3,8 +3,8 @@
  */
 module.exports = {
 	index: function (req, res) {
-		res.render("index", {
-			message: "Node First Public Page!"
+		res.render("register", {
+			message: "Car-Park"
 		});
 	},
 	default: function (req, res) {

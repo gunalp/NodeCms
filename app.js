@@ -10,6 +10,5 @@ var app = express();
 expressInit(app, function () {
 	app.listen(config.port, function () {
 		console.log("[express]", config.port);
-
 	});
 });

@@ -3,9 +3,8 @@
  */
 module.exports = {
 	index: function (req, res) {
-		res.render("index", {
-			message: "Node First Home Page!"
-		});
+		var cookieToken = req.cookies['token'];
+
 	},
 	default: function (req, res) {
 		res.status(404).json({
