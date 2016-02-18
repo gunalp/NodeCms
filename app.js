@@ -4,12 +4,13 @@
 var express = require('express');
 var config = require("./libs/config");
 var db = require("./libs/db");
-var expressInit = require("./libs/express");
 
 var app = express();
 
-expressInit(app, function () {
-	app.listen(config.port, function () {
-		console.log("[express]", config.port);
+db(function (){
+	require("./libs/express")(app,function(){
+		app.listen(config.port,function(){
+			console.log("[Port] : ",config.port);
+		});
 	});
 });

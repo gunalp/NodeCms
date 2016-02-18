@@ -1,12 +1,20 @@
 /**
  * Created by alpuysal on 17/02/16.
  */
-var Sequelize = require('sequelize');
-var sequelize = new Sequelize(null, null, null, {
-	"dialect": "sqlite",
-	"storage": "./carpark.sqlite"
-});
+global.Sequelize = require('sequelize');
+global.models = {};
+var fs = require('fs');
 
-sequelize.query("CREATE TABLE lorem (info TEXT)").spread(function(results, metadata) {
-	// Results will be an empty array and metadata will contain the number of affected rows.
-})
+module.exports = function (callback) {
+	global.sequelize = new Sequelize("./carpark.sqlite", null, null, {
+		"dialect": "sqlite",
+		"storage":"./carpark.sqlite"
+	});
+	fs.readdirSync(__dirname + '/../app/models').forEach(function (file) {
+		if (file.indexOf('.js')) {
+			var model = sequelize.import(__dirname + '/../app/models/' + file);
+			models[model.name] = model;
+		}
+	});
+	callback();
+};
