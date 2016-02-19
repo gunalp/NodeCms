@@ -38,14 +38,14 @@ module.exports = {
 	},
 	login: function (req, res) {
 
-		User.findOne({
+		models.users.findOne({
 			'uname': req.body.username,
 			'pwd': sha512(req.body.password)
-		}).exec()
-
+		})
 			.then(function (user) {
 				if (user) {
 					var createToken = randomToken.generate(32);
+
 					user.tokens.push(createToken);
 					return user.save()
 						.then(function (userAfterSave) {

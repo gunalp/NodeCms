@@ -65,6 +65,12 @@ function Login(main) {
 			console.log(keycode);
 			if(keycode == 13){sendLogin();}
 		});
+
+		domObjects.passwordInput.addEventListener("keyup",function(evt){
+			var keycode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+			console.log(keycode);
+			if(keycode == 13){sendLogin();}
+		});
 	};
 
 	var generatePage = function () {
