@@ -56,60 +56,73 @@ function Login(main) {
 
 	var initEvents = function () {
 
+		domObjects.loginButton.addEventListener("click", function () {
+			sendLogin();
+		});
+
+		domObjects.usernameInput.addEventListener("keyup",function(evt){
+			var keycode = evt ? (evt.which ? evt.which : evt.keyCode) : event.keyCode;
+			console.log(keycode);
+			if(keycode == 13){sendLogin();}
+		});
 	};
 
-	var generatePage = function (){
+	var generatePage = function () {
 		var login = document.createElement('div');
-		login.setAttribute('class','login-page');
+		login.setAttribute('class', 'login-page');
 		that.dom = login;
 
 		var divLogo = document.createElement('div');
-		divLogo.setAttribute('class','app-logo');
+		divLogo.setAttribute('class', 'app-logo');
 		login.appendChild(divLogo);
 
 
 		var divLogoImage = document.createElement('img');
-		divLogoImage.setAttribute('src','images/logo2.png');
+		divLogoImage.setAttribute('src', 'images/logo2.png');
 		divLogo.appendChild(divLogoImage);
 
 		var divForm = document.createElement('div');
-		divForm.setAttribute('class','form');
+		divForm.setAttribute('class', 'form');
 		login.appendChild(divForm);
 
 
-		var form = document.createElement('form');
-		form.setAttribute('class','login-form');
+		var form = document.createElement('div');
+		form.setAttribute('class', 'login-form');
 		divForm.appendChild(form);
 
 
 		var formInputUname = document.createElement('input');
-		formInputUname.setAttribute('type','text');
-		formInputUname.setAttribute('placeholder','username');
+		formInputUname.setAttribute('type', 'text');
+		formInputUname.setAttribute('placeholder', 'username');
+		formInputUname.setAttribute('id', 'username');
+		domObjects.usernameInput = formInputUname;
 		form.appendChild(formInputUname);
 
 
 		var formInputPwd = document.createElement('input');
-		formInputPwd.setAttribute('type','password');
-		formInputPwd.setAttribute('placeholder','password');
+		formInputPwd.setAttribute('type', 'password');
+		formInputPwd.setAttribute('placeholder', 'password');
+		formInputPwd.setAttribute('id', 'password');
+		domObjects.passwordInput = formInputPwd;
 		form.appendChild(formInputPwd);
 
 		var formButtonLogin = document.createElement('button');
 		form.appendChild(formButtonLogin);
 		formButtonLogin.innerHTML = "Login";
+		domObjects.loginButton = formButtonLogin;
 
 		var formPRegister = document.createElement('p');
-		formPRegister.setAttribute('class','message');
+		formPRegister.setAttribute('class', 'message');
 		form.appendChild(formPRegister);
 		formPRegister.innerHTML = "Not registered?";
 
 		var formARegister = document.createElement('a');
-		formARegister.setAttribute('id','register-button');
+		formARegister.setAttribute('id', 'register-button');
 		formPRegister.appendChild(formARegister);
 		formARegister.innerHTML = "Create an account";
-
+		domObjects.registerButton = formARegister;
 
 		main.appendChild(login);
-
 	};
 
 	this.show = function () {
@@ -127,6 +140,7 @@ function Login(main) {
 	var init = function () {
 		console.log("[LOGIN] : init");
 		generatePage();
+		initEvents();
 	};
 	init();
 }

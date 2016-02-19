@@ -28,7 +28,7 @@ function Register(main){
 		login.appendChild(divForm);
 
 
-		var form = document.createElement('form');
+		var form = document.createElement('div');
 		form.setAttribute('class','register-form');
 		divForm.appendChild(form);
 
