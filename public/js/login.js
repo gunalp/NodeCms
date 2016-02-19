@@ -63,6 +63,51 @@ function Login(main) {
 		login.setAttribute('class','login-page');
 		that.dom = login;
 
+		var divLogo = document.createElement('div');
+		divLogo.setAttribute('class','app-logo');
+		login.appendChild(divLogo);
+
+
+		var divLogoImage = document.createElement('img');
+		divLogoImage.setAttribute('src','images/logo2.png');
+		divLogo.appendChild(divLogoImage);
+
+		var divForm = document.createElement('div');
+		divForm.setAttribute('class','form');
+		login.appendChild(divForm);
+
+
+		var form = document.createElement('form');
+		form.setAttribute('class','login-form');
+		divForm.appendChild(form);
+
+
+		var formInputUname = document.createElement('input');
+		formInputUname.setAttribute('type','text');
+		formInputUname.setAttribute('placeholder','username');
+		form.appendChild(formInputUname);
+
+
+		var formInputPwd = document.createElement('input');
+		formInputPwd.setAttribute('type','password');
+		formInputPwd.setAttribute('placeholder','password');
+		form.appendChild(formInputPwd);
+
+		var formButtonLogin = document.createElement('button');
+		form.appendChild(formButtonLogin);
+		formButtonLogin.innerHTML = "Login";
+
+		var formPRegister = document.createElement('p');
+		formPRegister.setAttribute('class','message');
+		form.appendChild(formPRegister);
+		formPRegister.innerHTML = "Not registered?";
+
+		var formARegister = document.createElement('a');
+		formARegister.setAttribute('id','register-button');
+		formPRegister.appendChild(formARegister);
+		formARegister.innerHTML = "Create an account";
+
+
 		main.appendChild(login);
 
 	};
@@ -82,8 +127,6 @@ function Login(main) {
 	var init = function () {
 		console.log("[LOGIN] : init");
 		generatePage();
-		initEvents();
 	};
-
 	init();
 }

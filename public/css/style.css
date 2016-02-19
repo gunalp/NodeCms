@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+.app-logo{
+    padding: 20px;
+    color: #FFFFFF;
+}
 
+.app-logo img{
+    max-width: 320px;
+}
 .login-page {
     width: 360px;
     padding: 8% 0 0;
@@ -52,6 +59,11 @@
     color: #254117;
     text-decoration: none;
 }
+.form .message a:hover {
+    color: #254117;
+    text-decoration: none;
+    cursor: pointer;
+}
 .form .register-form {
     display: none;
 }
@@ -88,13 +100,8 @@
 .container .info span .fa {
     color: #EF3B3A;
 }
+
 body {
-    background: #728FCE; /* fallback for old browsers */
-    background: -webkit-linear-gradient(right, #728FCE, #488AC7);
-    background: -moz-linear-gradient(right, #728FCE, #488AC7);
-    background: -o-linear-gradient(right, #728FCE, #488AC7);
-    background: linear-gradient(to left, #728FCE, #488AC7);
+    background-color: #728FCE !important;
     font-family: "Roboto", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
